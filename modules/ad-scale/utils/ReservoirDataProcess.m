@@ -1,0 +1,35 @@
+function ReservoirData = ReservoirDataProcess(states,nstep)
+ReservoirData = struct();
+ReservoirData.Pressure = deal(cell(nstep,1));
+ReservoirData.Sat      = deal(cell(nstep,1));
+ReservoirData.SO4      = deal(cell(nstep,1));
+ReservoirData.Ca       = deal(cell(nstep,1));
+ReservoirData.Mg       = deal(cell(nstep,1));
+ReservoirData.Na       = deal(cell(nstep,1));
+ReservoirData.Sr       = deal(cell(nstep,1));
+ReservoirData.Ba       = deal(cell(nstep,1));
+ReservoirData.CO3      = deal(cell(nstep,1));
+ReservoirData.Cl       = deal(cell(nstep,1));
+
+for i=1:nstep
+    p=states{i,1};
+    ReservoirData.Pressure{i,1}= convertTo(p.pressure,psia);
+    ReservoirData.Sat{i,1}     = p.s;    
+    x_SO4 = p.c_SO4;
+    x_Ca  = p.c_Ca;
+    x_Sr  = p.c_Sr;
+    x_Ba  = p.c_Ba;
+    x_Na  = p.c_Na;
+    x_Mg  = p.c_Mg;
+    x_CO3 = p.c_CO3;
+    x_Cl  = p.c_Cl;
+    sigma = x_SO4 + x_Ca + x_Ba + x_Sr + x_Na + x_Cl + x_Mg + x_CO3;
+    ReservoirData.SO4{i,1}     = x_SO4./(1+sigma).*1e6;
+    ReservoirData.Ca{i,1}      = x_Ca./(1+sigma).*1e6;
+    ReservoirData.Sr{i,1}      = x_Sr./(1+sigma).*1e6;
+    ReservoirData.Ba{i,1}      = x_Ba./(1+sigma).*1e6;
+    ReservoirData.Na{i,1}      = x_Na./(1+sigma).*1e6;
+    ReservoirData.Mg{i,1}      = x_Mg./(1+sigma).*1e6;
+    ReservoirData.CO3{i,1}     = x_CO3./(1+sigma).*1e6;
+    ReservoirData.Cl{i,1}      = x_Cl./(1+sigma).*1e6;
+end

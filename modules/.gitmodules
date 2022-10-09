@@ -1,0 +1,37 @@
+[submodule "upr"]
+	path = upr
+	url = https://github.com/rbe051/UPR.git
+[submodule "fvbiot"]
+	path = fvbiot
+	url = https://github.com/pmgbergen/fvbiot.git
+[submodule "re-mpfa"]
+	path = re-mpfa
+	url = https://github.com/jhabriel/re-mpfa.git
+	branch = master
+[submodule "dual-porosity"]
+	path = dual-porosity
+	url = git@bitbucket.org:rafael_march_carbonates_hw/mrst-dual-porosity.git
+[submodule "nwm"]
+	path = nwm
+	url = https://bitbucket.org/LinZhao9/nwm.git
+[submodule "geochemistry"]
+	path = geochemistry
+	url = git@bitbucket.org:mrst/matlab-geochemistry.git
+[submodule "geothermal"]
+	path = geothermal
+	url = git@bitbucket.org:mrst/geothermal.git
+[submodule "mrst-domain-decomposition"]
+	path = domain-decomposition
+	url = git@bitbucket.org:mrst/mrst-domain-decomposition.git
+[submodule "hwu-fractures"]
+	path = hwu-fractures
+	url = https://bitbucket.org/HWUCarbonates/mrst-hwu-fractures/
+[submodule "fv-unsat"]
+	path = fv-unsat
+	url = https://github.com/jhabriel/fv-unsat
+[submodule "dual-continuum-mech"]
+	path = dual-continuum-mech
+	url = https://bitbucket.org/mashworth92/dual-continuum-mech/
+[submodule "shale"]
+	path = shale
+	url = https://github.com/UnconvRS/shale
